@@ -1,8 +1,30 @@
+<?php
+// Include the database connection
+include('connect.php');
+
+// Query to get data from the islandsofpersonality table
+$sql_islands = "SELECT * FROM `islandsofpersonality` ORDER BY `islandOfPersonalityID` ASC";
+$result_islands = $conn->query($sql_islands);
+
+// Check if query was successful
+if (!$result_islands) {
+    die("Error in query: " . $conn->error);
+}
+
+// Query to get data from the islandcontents table
+$sql_contents = "SELECT * FROM `islandcontents`";
+$result_contents = $conn->query($sql_contents);
+
+// Check if query was successful
+if (!$result_contents) {
+    die("Error in query: " . $conn->error);
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
 <title>SAM-BE: Inside Out Theme</title>
-<link rel="icon" href="C:\Users\Win11\Desktop\Vs code\SAM projects\SAM-BE\assets\web_icon.ico">
+<link rel="icon" href="C:\\Users\\Win11\\Desktop\\Vs code\\SAM projects\\SAM-BE\\assets\\web_icon.ico">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -78,7 +100,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
       <div class="w3 ennui-color  w3-card-4">
         <div class="w3-display-container">
-          <img src="C:\Users\Win11\Desktop\Vs code\SAM projects\SAM-BE\assets\Me.jpg" style="width:100%" alt="Avatar">
+          <img src="C:\\Users\\Win11\\Desktop\\Vs code\\SAM projects\\SAM-BE\\assets\\Me.jpg" style="width:100%" alt="Avatar">
           <div class="w3-display-bottomleft w3-container w3-text-black">
             <h2 class="sadness-color">Alfea Aemiel Mingua</h2>
           </div>
@@ -158,3 +180,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 
 </body>
 </html>
+<?php
+// Close the database connection
+$conn->close();
+?>
