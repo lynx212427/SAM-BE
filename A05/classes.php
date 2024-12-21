@@ -24,8 +24,7 @@ class Island
         return '
             <div class="col-lg-12 mb-5">
                 <div class="card mb-3">
-                    <div class="card-header disgust-color">
-                        <img src="' . $this->personalityImage . '" class="img-responsive mb-3 card-img-top" alt="Card Image">
+                    <div class="card-header disgust-color p-4">
                         <h3>' . $this->islandName . '</h3>
                         <p class="mx-4">' . $this->longDesc . '</p>
                     </div>
